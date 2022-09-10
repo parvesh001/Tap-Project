@@ -1,0 +1,115 @@
+/* global */
+:root{
+    --xsm-pd:15px;
+    --sm-pd:20px;
+    --md-pd:40px;
+    --xsm-mrgn:10px;
+    --sm-mrgn:20px;
+    --md-mrgn:40px;
+    --clr-light:#fff;
+    --clr-light-green:rgb(56 118 82);
+    --sm-radius:5px;
+    --md-radius:10px;
+    --lg-radius:20px;
+    --xsm-font:16px;
+    --sm-font:18px;
+
+}
+
+/* universal */
+*,::after,::before{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    list-style: none;
+}
+/* body */
+body{
+    padding:var(--sm-pd);
+    background-color:var(--clr-light-green);
+}
+/* about title*/
+.about-title{
+    text-align: center;
+    margin-bottom: var(--md-mrgn);
+    color:var(--clr-light);
+    text-shadow: 2px 2px 13px rgba(0,0,0,0.7);
+}
+.about-title h1{
+    letter-spacing: 3px;
+    line-height: 40px;
+}
+.about-title p{
+    font-size: 18px;
+}
+
+/* about image */
+.about-img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--sm-mrgn);
+}
+.about-img img{
+    border-radius: var(--lg-radius);
+    width:100%;
+}
+
+/* about btn and content container */
+.about-btn-content{
+    background-color: var(--clr-light);
+    padding: var(--sm-pd);
+    border-radius: var(--sm-radius);
+}
+
+/* btn-container */
+.btn-container{
+    margin-bottom: var(--xsm-mrgn);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+/* btns */
+.btn-container .btn {
+    padding: var(--xsm-pd) var(--sm-pd);
+    border: 2px solid transparent;
+    font-size: var(--xsm-font);
+    cursor: pointer;
+}
+.btn:hover{
+    border: 2px solid var(--clr-light-green);
+    color:var(--clr-light-green);
+}
+.btn.active{
+    background-color: var(--clr-light);
+}
+
+/* contents */
+.content{
+    display: none;
+}
+.content.active{
+    display: block;
+}
+
+/*****RESPONSIVENESS*****/
+
+/* viewport 800px */
+@media screen and (min-width:800px){
+    .about-center{
+        display: flex;
+        height: 80vh;
+        justify-content: center;
+        align-items: center;
+    }
+    .about-img{
+        width:40%;
+        justify-content: flex-start;
+    }
+    .about-img img {
+        width: 94%;
+    }
+    .about-btn-content {
+       width: 60%;
+       height:100%;
+    }
+}
